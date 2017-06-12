@@ -3,12 +3,10 @@
  *This is a Simple Computer / Should be treated as such. (Part. II)
  */
 package Calculator;
-
-import java.util.*;
 import java.util.Scanner;
 
 /**
- * @author Popa Olimpiu Mihai
+ * @author Popa Olimpiu Mihai and Company@.
  */
 public class Calculator {
 

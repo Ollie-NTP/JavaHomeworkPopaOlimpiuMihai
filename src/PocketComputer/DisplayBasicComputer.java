@@ -5,7 +5,7 @@
 package PocketComputer;
 
 /**
- * @author Popa Olimpiu Mihai
+ * @author Popa Olimpiu Mihai and Company@.
  */
 
 public class DisplayBasicComputer extends javax.swing.JFrame {
