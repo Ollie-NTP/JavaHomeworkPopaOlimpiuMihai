@@ -21,6 +21,7 @@ public class Car implements Saleable, Rentable{
     private String name;
     private short speed;
     private short price;
+    private short priceRent;
  /**
  Constructors
  */
@@ -28,11 +29,10 @@ public class Car implements Saleable, Rentable{
         name = "Default car name";
         speed = 90;
     }
-    public Car(String carName, short carSpeed, Color carColor, short priceCar){
+    public Car(String carName, short carSpeed, Color carColor){
         name = carName;
         speed = carSpeed;
         color = carColor;
-        price = priceCar;
     }
  /*get-ers and set-ers*/
     public String getName(){
@@ -57,6 +57,10 @@ public class Car implements Saleable, Rentable{
     
     public void setPrice(short priceCar){
         price = priceCar;
+    }
+    
+    public void setPriceForRent(short priceRentCar){
+        priceRent = priceRentCar;
     }
  /**
  The method increase actual speed of Car until final speed specified.
@@ -98,7 +102,7 @@ public class Car implements Saleable, Rentable{
  */
  @Override
     public int getDailyRentPrice(){
-       return(250);
+       return(priceRent);
     }
     
     public static void main(String[] args){
@@ -106,14 +110,18 @@ public class Car implements Saleable, Rentable{
         short price = 5000;
         short speedTruck = 90;
         short priceTruck = 8000;
+        short priceRentCar = 100;
+        short priceRentTruck = 559;
         //First Car Object with her price !
-        Car mica = new Car("Mercedes",speedm,Color.BLACK, price);
+        Car mica = new Car("Mercedes",speedm,Color.BLACK);
         mica.setPrice(price);
-        System.out.println("Car MICA = > getSalePrice is : " + mica.getSalePrice());
+        mica.setPriceForRent(priceRentCar);
+        System.out.println("Masina mica - GetSalePrice is : " + mica.getSalePrice() + "$ ! and GetDailyRentPrice " + mica.getDailyRentPrice() + "$ !");
         //Second Car Object with her price !
-        Car mare = new Car("Man",speedTruck,Color.RED, priceTruck);
+        Car mare = new Car("Man",speedTruck,Color.RED);
         mare.setPrice(priceTruck);
-        System.out.println("Car TRUCK = > getSalePrice is : " + mare.getSalePrice());
+        mare.setPriceForRent(priceRentTruck);
+        System.out.println("Camion imens - GetSalePrice is : " + mare.getSalePrice() + "$ ! and GetDailyRentPrice " + mare.getDailyRentPrice() + "$ !");
         // I used the Interface Saleable for unique price, for some objects !
    }
 }
