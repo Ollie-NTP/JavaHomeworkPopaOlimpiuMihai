@@ -56,7 +56,21 @@ public class Car implements Saleable, Rentable{
     }
     
     public void setPrice(short priceCar){
-        price = priceCar;
+        if( priceCar > price){
+              price = priceCar;
+        }
+        else if( priceCar < price){    
+              decresePrice(priceCar);
+        }
+    }
+    
+    public void decresePrice(short priceCar){
+          if( priceCar < price){
+              price = priceCar;
+        }
+        else if( priceCar < price){    
+             setPrice(priceCar);
+        }
     }
     
     public void setPriceForRent(short priceRentCar){
@@ -115,6 +129,8 @@ public class Car implements Saleable, Rentable{
         //First Car Object with her price !
         Car mica = new Car("Mercedes",speedm,Color.BLACK);
         mica.setPrice(price);
+        //The price has been modify.
+        //mica.setPrice(priceTruck);
         mica.setPriceForRent(priceRentCar);
         System.out.println("Masina mica - GetSalePrice is : " + mica.getSalePrice() + "$ ! and GetDailyRentPrice " + mica.getDailyRentPrice() + "$ !");
         //Second Car Object with her price !
