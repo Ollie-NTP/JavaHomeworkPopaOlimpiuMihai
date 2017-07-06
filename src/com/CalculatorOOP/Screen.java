@@ -14,7 +14,7 @@ public class Screen {
     
     public void displayResult(){
         System.out.print("**********************************\n");
-        System.out.print("*Display* ");
+        System.out.print("*Display* |");
         System.out.print(result);
         System.out.print("\n");
         System.out.print("**********************************\n");
