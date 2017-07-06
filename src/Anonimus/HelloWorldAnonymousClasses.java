@@ -1,4 +1,4 @@
-package com.Anonimus;
+package co.Anonimus;
 /**
  * @author PopaOlimpiuMihai
  */
