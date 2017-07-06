@@ -1,9 +1,8 @@
 package com.Anonimus;
-
 /**
- *
  * @author PopaOlimpiuMihai
  */
+
 public class HelloWorldAnonymousClasses {
     // Inner interface HelloWorld
     interface HelloWorld {
@@ -27,7 +26,6 @@ public class HelloWorldAnonymousClasses {
             System.out.println("Hello " + name);
         }
     } // end of EnglishGreeting local class
-
 // create an EnglishGreeting object/instance
     HelloWorld englishGreeting = new EnglishGreeting();
      
@@ -47,6 +45,7 @@ public class HelloWorldAnonymousClasses {
             System.out.println("Salut " + name);
         }    
     }
+    
     HelloWorld frenchGreeting = new FrenchGreeting(); // end of inner class
   
 // inner class French language      
@@ -68,6 +67,8 @@ public class HelloWorldAnonymousClasses {
     }
     
     HelloWorld spanishGreeting = new SpanishGreeting(); // end of inner class
+      
+// inner class Spanish language    
   
     englishGreeting.greet();
     frenchGreeting.greetSomeone("Fred");
