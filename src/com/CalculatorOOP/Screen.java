@@ -9,7 +9,7 @@ package com.CalculatorOOP;
  */
 public class Screen {
     String result = "0";
-    int n1,n2;
+    float n1,n2;
     Button operator;
     
     public void displayResult(){
@@ -30,7 +30,7 @@ public class Screen {
                 result = String.valueOf(n1 - n2);
                 break;
             case '/':
-                result = String.valueOf(n1 / n2);
+                result = String.valueOf(n1 / n2 );
                 break;
             case '*':
                 result = String.valueOf(n1 * n2);
@@ -51,12 +51,12 @@ public class Screen {
         System.out.print("**********************************\n");
     }
     
-    public void setN1(int n1){
+    public void setN1(float n1){
         this.n1 = n1;
     }
     
-    public void setN2(int n1){
-        this.n2 = n1;
+    public void setN2(float n2){
+        this.n2 = n2;
     }
     
     public boolean op(Button operator){   
