@@ -4,13 +4,11 @@
 package com.CalculatorOOP;
 
 import java.util.Scanner;
-
 /**
  *
  * @author Popa Olimpiu - Mihai
  */
 public class RunPocketCalculator {
-
     /**
      * @param args the command line arguments
      */
