@@ -12,6 +12,7 @@ package OOP.Car.HomeWork;
     public class Order {
         private BaseCarFactory factory;
         private int n;  
+        private int sum;
                 
         public Order(BaseCarFactory factory, int n) {
             this.factory = factory;
@@ -26,4 +27,10 @@ package OOP.Car.HomeWork;
             return n;
         }
         
+        protected int getNumberCarsAvailabe(int m){
+            if (n > m){ 
+                sum = n-m; 
+            }
+                return sum; 
+        } 
     } 
