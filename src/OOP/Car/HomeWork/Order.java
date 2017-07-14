@@ -27,7 +27,7 @@ package OOP.Car.HomeWork;
             return n;
         }
         
-        protected int getNumberCarsAvailabe(int m){
+        protected int getNumberCarsSold(int m){
             if (n > m){ 
                 sum = n-m; 
             }
