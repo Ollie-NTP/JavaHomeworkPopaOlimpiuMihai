@@ -31,7 +31,8 @@ public class Retailer {
                 System.out.println("Cars : Ordering "
                         + Today.getNumberCars() 
                         + " Cars from " 
-                        + factories.get(idx).getFactoryName() + " Factory ! " );
+                        + factories.get(idx).getFactoryName() 
+                        + " Factory ! Wating in parkarea (...) !" );
             }
         }
         return sum;
