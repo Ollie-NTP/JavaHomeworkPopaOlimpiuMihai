@@ -5,6 +5,10 @@
  */
 package OOP.Car.HomeWork;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author mihai
@@ -120,25 +124,74 @@ public class Car implements Saleable, Rentable{
     }
     
     public static void main(String[] args){
+ 
         short speedm = 120;
         short price = 5000;
         short speedTruck = 90;
         short priceTruck = 8000;
         short priceRentCar = 100;
         short priceRentTruck = 559;
-        //First Car Object with her price !
-        Car mica = new Car("Mercedes",speedm,Color.BLACK);
-        mica.setPrice(price);
-        //The price has been modify.
-        //mica.setPrice(priceTruck);
-        mica.setPriceForRent(priceRentCar);
-        System.out.println("Masina mica - GetSalePrice is : " + mica.getSalePrice() + "$ ! and GetDailyRentPrice " + mica.getDailyRentPrice() + "$ !");
-        //Second Car Object with her price !
-        Car mare = new Car("Man",speedTruck,Color.RED);
-        mare.setPrice(priceTruck);
-        mare.setPriceForRent(priceRentTruck);
-        System.out.println("Camion imens - GetSalePrice is : " + mare.getSalePrice() + "$ ! and GetDailyRentPrice " + mare.getDailyRentPrice() + "$ !");
+        
+        // First Factoy ! Mercedes, I want 5 cars !
+        System.out.println("*************************************************");
+        
+        Car C = new Car("Mercedes",speedm,Color.BLACK);
+            C.setPrice(price);
+            C.setPriceForRent(priceRentCar);
+            
+        System.out.println("Mercedes C Classe -> GetSalePrice is : " 
+            + C.getSalePrice() + "$ !\nMercedes C Classe -> GetDailyRentPrice " 
+            + C.getDailyRentPrice() + "$ !");
+            
+        BaseCarFactory MercedesFactoryClass  = new BaseCarFactory(C, "|Mercedes|");
+        
+        List<BaseCarFactory> factories =  new ArrayList<>();
+            factories.add(MercedesFactoryClass);
+            
+        Order comandType = new Order(MercedesFactoryClass, 5);
+        
+        List<Order> comenzi =  new ArrayList<>();
+            comenzi.add(comandType);
+            
+        Retailer retailerGuy = new Retailer(factories);
+        
+        int costTotal = retailerGuy.placeOrder(comenzi);
+        System.out.println("*************************************************");
+        System.out.println("Total cost production for " 
+                + comandType.getNumberCars()  
+                + " cars is : " + costTotal + "$");
+        System.out.println("*************************************************");
+        System.out.println("\n");
+        System.out.println("*************************************************");
+        
+        //Second Truck
+        Car evo = new Car("Man",speedTruck,Color.RED);
+            evo.setPrice(priceTruck);
+            evo.setPriceForRent(priceRentTruck);
+            
+        System.out.println("Man Evo -> GetSalePrice is : " 
+                + evo.getSalePrice() + "$ !\nMan Evo -> GetDailyRentPrice " 
+                + evo.getDailyRentPrice() + "$ !");
+        
+        BaseCarFactory ManFactory = new BaseCarFactory(evo, "|Man|");
+        
+        List<BaseCarFactory> factories1 =  new ArrayList<>();
+            factories1.add(ManFactory);
+            Order comandType1 = new Order(ManFactory, 10);
+            comenzi.add(comandType1);
+            Retailer retailerGuy1 = new Retailer(factories1);
+        
+        int costTotal1 = retailerGuy1.placeOrder(comenzi);
+        System.out.println("*************************************************");
+        System.out.println("Total cost production for " 
+                + comandType1.getNumberCars()  
+                + " cars is : " + costTotal1 + "$");
+        System.out.println("*************************************************");
+       
+            
+        
         // I used the Interface Saleable for unique price, for some objects !
+        
    }
 }
    
