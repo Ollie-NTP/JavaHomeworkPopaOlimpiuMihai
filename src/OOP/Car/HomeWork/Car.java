@@ -160,7 +160,8 @@ public class Car implements Saleable, Rentable{
         System.out.println("Total cost production for " 
                 + comandType.getNumberCars()  
                 + " cars is : " + costTotal + "$");
-        System.out.println("Existent stock is: " + comandType.getNumberCarsSold(2));
+        System.out.println("Existent stock is: " 
+                + comandType.getNumberCarsSold(2) + " Cars !");
         System.out.println("*************************************************");
         System.out.println("\n");
         System.out.println("*************************************************");
@@ -187,7 +188,8 @@ public class Car implements Saleable, Rentable{
         System.out.println("Total cost production for " 
                 + comandType1.getNumberCars()  
                 + " cars is : " + costTotal1 + "$");
-        System.out.println("Existent stock is: " + comandType1.getNumberCarsSold(8));
+        System.out.println("Existent stock is: " 
+                + comandType1.getNumberCarsSold(8) + " Cars !");
         System.out.println("*************************************************");
        
             
