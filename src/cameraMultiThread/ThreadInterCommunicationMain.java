@@ -20,22 +20,26 @@ public class ThreadInterCommunicationMain {
         Femeia femeia = new Femeia(personaj);
         Barbatul barbat = new Barbatul(personaj);
         Trabucul tigara = new Trabucul(personaj);
+        Televizor tv = new Televizor(personaj);
 
         // Femeia threads which will wait for completion of book
         Thread FemeiaThread = new Thread(femeia, "Femeia");
         Thread BarbatulThread = new Thread(barbat, "Barbatul");
         Thread TrabuculThread = new Thread(tigara, "Trabuc Cubanez");
+        Thread TvThread = new Thread(tv, "Televizor");
 
         FemeiaThread.start();
         BarbatulThread.start();
         TrabuculThread.start();
+        TvThread.start();
 
         // Asigura că toate personajele au început să astepte...sunt in actiune!
         try {
             Thread.sleep(3000);
             System.out.println("| State -> Femeie " + FemeiaThread.getState() + "\n"
                     + "| State -> Barbat " + BarbatulThread.getState() + "\n"
-                    + "| State -> Trabuc " + TrabuculThread.getState());
+                    + "| State -> Trabuc " + TrabuculThread.getState() + "\n"
+                    + "| State -> Tv " + TvThread.getState());
             System.out.println("---------------------------------------------");
         } catch (InterruptedException e) {
 
@@ -50,7 +54,8 @@ public class ThreadInterCommunicationMain {
             System.out.println("---------------------------------------------");
             System.out.println("| State -> Femeie " + FemeiaThread.getState() + "\n"
                     + "| State -> Barbat " + BarbatulThread.getState() + "\n"
-                    + "| State -> Trabuc " + TrabuculThread.getState());
+                    + "| State -> Trabuc " + TrabuculThread.getState() + "\n"
+                    + "| State -> Tv " + TvThread.getState());
             System.out.println("---------------------------------------------");
         } catch (InterruptedException e) {
 
