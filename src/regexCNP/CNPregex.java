@@ -2,11 +2,10 @@ package regexCNP;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import java.util.regex.PatternSyntaxException;
 
 /* Name of the class has to be “Main” only if the class is public. */
 class CNPregex {
-    private static String regularExpression = "[12](0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])(19|20)\\d{2}[0-9]{4}";
+    private static final String regularExpression = "[12](0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])(19|20)\\d{2}[0-9]{4}";
     
     /* 
     *CNP = 1 or 2 and next 6 (8 if the year is complete) digits are for
