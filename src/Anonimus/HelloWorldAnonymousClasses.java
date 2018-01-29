@@ -50,8 +50,8 @@ public class HelloWorldAnonymousClasses {
   
 // inner class French language      
         
-    // create an anonimous class for Spanish language
-    class SpanishGreeting implements HelloWorld {
+// create an anonimous class for Spanish language
+     HelloWorld spanishGreeting = new HelloWorld() {
        String name = "mundo"; 
        
        @Override
@@ -64,12 +64,9 @@ public class HelloWorldAnonymousClasses {
             name = someone;
             System.out.println("Hola, " + name);
         } // end of inner class
-    }
-    
-    HelloWorld spanishGreeting = new SpanishGreeting(); // end of inner class
-      
+    };
+     
 // inner class Spanish language    
-  
     englishGreeting.greet();
     frenchGreeting.greetSomeone("Fred");
     spanishGreeting.greet();
@@ -77,7 +74,7 @@ public class HelloWorldAnonymousClasses {
     
  // main method
     
- public static void main(String[] args) {
+public static void main(String[] args) {
         HelloWorldAnonymousClasses myApp = new HelloWorldAnonymousClasses();
         myApp.sayHello();
     }
